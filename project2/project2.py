@@ -79,7 +79,7 @@ for x in range(0,200):
 	studyset.append(group_generator())
 
 #ALGORITHM SELECTOR:
-print("selected random algorithm")
+print("uncomment selected random algorithm")
 randomgroups(dataset, studyset, studentlimit, grouplimit)
 #print("selected optimal algorithm")
 #optimalgroups(dataset, studyset, studentlimit, grouplimit)
