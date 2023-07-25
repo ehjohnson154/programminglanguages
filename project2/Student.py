@@ -31,9 +31,10 @@ class Student(Person):
 		self.studygroups.remove(group)
 
 	# Has valid course-load (checks that no courses are repeated and that student has exactly α courses) #more than 1?
-	def validcourses(self):
-		if len(self.courses) > 0:
-			return True
+	def validcourses(self, num):
+		if len(self.courses) == num:
+			if len(self.courses) == set(self.courses):
+				return True
 		else:
 			return False
 
@@ -65,27 +66,23 @@ class Student(Person):
 
 		else:				
 			return True
-		#print("not finished")
 
-	def needbuddys(self):
-		
+
+	def needbuddys(self): #returns list of courses it still needs to find buddys for
+	
 		tempcheck = list(self.getcourses())
-		#print("checking len")
-		# print(tempcheck)
-		# print(self.getcourses())
 
 		for x in range(0, len(self.studygroups)-1):
 
 			tempc = self.getcourses()
 			tempsg = self.studygroups[x]
-			#tempcheck.append(tempc[x])
 			for y in range(0, (len(tempc)-1)):
 
 				if tempc[y] in tempsg.coveredcourses() and tempc[y] in tempcheck:
 					tempcheck.remove(tempc[y])
 		return tempcheck
 	
-	def freegroupspace(self, glimit):
+	def freegroupspace(self, glimit): #returns true if there is sitll free space in a group they are in
 		counter = len(self.studygroups)
 
 		for x in range(0, len(self.studygroups)):
@@ -95,7 +92,6 @@ class Student(Person):
 		if counter != 0:
 			return True
 		else:
-			#print(counter)
 			return False
 
 	
