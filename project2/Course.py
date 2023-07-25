@@ -27,7 +27,7 @@ class Course:
 	def removeprofessor(self):
 		self.professor = None
 
-	def isvalidcourse(self):
+	def isvalidcourse(self): #confirms course has valid requirements
 		if self.professor != None and len(self.roster) >= 2:
 			return True
 		else:

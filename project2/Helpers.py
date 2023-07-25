@@ -43,7 +43,7 @@ def course_generator(name, dep, cnum, prof):
 	c = Course(name=name, department=dep, number=cnum, professor=prof, roster=[])
 	return c
 
-def correctness(dataset, studyset, gmin, gmax):
+def correctness(dataset, studyset, gmin, gmax): #checks the correctness of solution
 	grouperrors = 0
 	studybuddyerrors = 0
 
