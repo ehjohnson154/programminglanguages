@@ -159,7 +159,7 @@ for x in range(0, n):
 
 #500 students, who can each have 2
 
-for x in range(0,500):
+for x in range(0,200):
 	studyset.append(group_generator())
 
 #print(groupid)
